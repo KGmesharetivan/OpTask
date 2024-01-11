@@ -173,9 +173,9 @@ function UpdateProfile(props) {
                             className="rounded-circle"
                             width="120"
                           />
-                          <h2 class="card-title mb-0">{nameValue}</h2>
+                          <h2 className="card-title mb-0">{nameValue}</h2>
                           <div className="mt-3">
-                            <button type className="btn saveBtn">
+                            <button type="submit" className="btn saveBtn">
                               Save Profile
                             </button>
                           </div>

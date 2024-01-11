@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 require("dotenv").config();
 const { MongoClient, ObjectId } = require("mongodb");
 
@@ -12,7 +13,7 @@ function OpTaskDB() {
     let client;
     try {
       console.log("Saving user....");
-      client = new MongoClient(url, { useUnifiedTopology: true });
+      client = new MongoClient(url);
       await client.connect();
       const db = client.db(DB_NAME);
       const usersCollection = db.collection("users");
@@ -28,7 +29,7 @@ function OpTaskDB() {
     let client;
     try {
       console.log("Finding user...");
-      client = new MongoClient(url, { useUnifiedTopology: true });
+      client = new MongoClient(url);
       await client.connect();
       console.log("Connecting to OpTask DB...");
       const db = client.db(DB_NAME);
@@ -48,7 +49,7 @@ function OpTaskDB() {
     let client;
     try {
       console.log("Finding user...");
-      client = new MongoClient(url, { useUnifiedTopology: true });
+      client = new MongoClient(url);
       await client.connect();
       console.log("Connecting to OpTask DB...");
       const db = client.db(DB_NAME);
@@ -68,7 +69,7 @@ function OpTaskDB() {
     let client;
     try {
       console.log("Getting projects...");
-      client = new MongoClient(url, { useUnifiedTopology: true });
+      client = new MongoClient(url);
       await client.connect();
       console.log("Connecting to OpTask DB...");
       const db = client.db(DB_NAME);
@@ -88,7 +89,7 @@ function OpTaskDB() {
     let client;
     try {
       console.log("Getting number of projects...");
-      client = new MongoClient(url, { useUnifiedTopology: true });
+      client = new MongoClient(url);
       await client.connect();
       console.log("Connecting to OpTask DB...");
       const db = client.db(DB_NAME);
@@ -107,7 +108,7 @@ function OpTaskDB() {
     let client;
     try {
       console.log("Getting projects...");
-      client = new MongoClient(url, { useUnifiedTopology: true });
+      client = new MongoClient(url);
       await client.connect();
       console.log("Connecting to OpTask DB...");
       const db = client.db(DB_NAME);
@@ -129,7 +130,7 @@ function OpTaskDB() {
     let client;
     try {
       console.log("Creating project...");
-      client = new MongoClient(url, { useUnifiedTopology: true });
+      client = new MongoClient(url);
       await client.connect();
       console.log("Connecting to OpTask DB...");
       const db = client.db(DB_NAME);
@@ -146,7 +147,7 @@ function OpTaskDB() {
     let client;
     try {
       console.log("Getting project");
-      client = new MongoClient(url, { useUnifiedTopology: true });
+      client = new MongoClient(url);
       await client.connect();
       console.log("connecting to the db");
       const db = client.db(DB_NAME);
@@ -165,7 +166,7 @@ function OpTaskDB() {
     let client;
     try {
       console.log("Getting projects...");
-      client = new MongoClient(url, { useUnifiedTopology: true });
+      client = new MongoClient(url);
       await client.connect();
       console.log("Connecting to OpTask DB...");
       const db = client.db(DB_NAME);
@@ -186,7 +187,7 @@ function OpTaskDB() {
     let client;
     try {
       console.log("Updating project");
-      client = new MongoClient(url, { useUnifiedTopology: true });
+      client = new MongoClient(url);
       await client.connect();
       console.log("connecting to the db");
       const db = client.db(DB_NAME);
@@ -213,7 +214,7 @@ function OpTaskDB() {
     let client;
     try {
       console.log("Deleting project");
-      client = new MongoClient(url, { useUnifiedTopology: true });
+      client = new MongoClient(url);
       await client.connect();
       console.log("connecting to the db");
       const db = client.db(DB_NAME);
@@ -236,7 +237,7 @@ function OpTaskDB() {
     let client;
     try {
       console.log("Searching and retrieving project");
-      client = new MongoClient(url, { useUnifiedTopology: true });
+      client = new MongoClient(url);
       await client.connect();
       console.log("connecting to the db");
       const db = client.db(DB_NAME);
@@ -263,7 +264,7 @@ function OpTaskDB() {
     let client;
     try {
       console.log("Getting number of projects...");
-      client = new MongoClient(url, { useUnifiedTopology: true });
+      client = new MongoClient(url);
       await client.connect();
       console.log("Connecting to OpTask DB...");
       const db = client.db(DB_NAME);
@@ -285,7 +286,7 @@ function OpTaskDB() {
     let client;
     try {
       console.log("Creating task...");
-      client = new MongoClient(url, { useUnifiedTopology: true });
+      client = new MongoClient(url);
       await client.connect();
       console.log("Connecting to OpTask DB...");
       const db = client.db(DB_NAME);
@@ -302,7 +303,7 @@ function OpTaskDB() {
     let client;
     try {
       console.log("Getting tasks...");
-      client = new MongoClient(url, { useUnifiedTopology: true });
+      client = new MongoClient(url);
       await client.connect();
       console.log("Connecting to OpTask DB...");
       const db = client.db(DB_NAME);
@@ -321,7 +322,7 @@ function OpTaskDB() {
     let client;
     try {
       console.log("Updating task timeline...");
-      client = new MongoClient(url, { useUnifiedTopology: true });
+      client = new MongoClient(url);
       await client.connect();
       console.log("Connecting to OpTask DB...");
       const db = client.db(DB_NAME);
@@ -344,7 +345,7 @@ function OpTaskDB() {
   opDB.updateTaskText = async (newTaskObject) => {
     let client;
     try {
-      client = new MongoClient(url, { useUnifiedTopology: true });
+      client = new MongoClient(url);
       await client.connect();
       const db = client.db(DB_NAME);
       const taskCollection = db.collection("tasks");
@@ -368,7 +369,7 @@ function OpTaskDB() {
   opDB.deleteTask = async (taskId) => {
     let client;
     try {
-      client = new MongoClient(url, { useUnifiedTopology: true });
+      client = new MongoClient(url);
       await client.connect();
       const db = client.db(DB_NAME);
       const taskCollection = db.collection("tasks");
@@ -386,7 +387,7 @@ function OpTaskDB() {
   // opDB.getProfile = async(userId) => {
   //   let client;
   //   console.log("Getting user info...");
-  //   client = new MongoClient(url, { useUnifiedTopology: true });
+  //   client = new MongoClient(url,  );
   //   await client.connect();
   //   console.log("Connecting to OpTask DB...");
   //   const db = client.db(DB_NAME);
@@ -402,7 +403,7 @@ function OpTaskDB() {
     let client;
     try {
       console.log("Getting user info...");
-      client = new MongoClient(url, { useUnifiedTopology: true });
+      client = new MongoClient(url);
       await client.connect();
       console.log("Connecting to OpTask DB...");
       const db = client.db(DB_NAME);

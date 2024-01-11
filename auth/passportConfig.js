@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const opDB = require("../db/OpTaskDB");

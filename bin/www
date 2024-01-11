@@ -1,5 +1,4 @@
-#!/usr/bin/env node
-
+/* eslint-disable linebreak-style */
 /**
  * Module dependencies.
  */
@@ -7,6 +6,7 @@
 var app = require("../app");
 var debug = require("debug")("backend:server");
 var http = require("http");
+var mongoose = require("mongoose");
 
 /**
  * Get port from environment and store in Express.
@@ -14,6 +14,20 @@ var http = require("http");
 
 var port = normalizePort(process.env.PORT || "3001");
 app.set("port", port);
+
+/**
+ * MongoDB Connection
+ */
+
+mongoose.connect(process.env.DB_STRING, {});
+
+mongoose.connection.on("connected", function () {
+  console.log("Connected to MongoDB");
+});
+
+mongoose.connection.on("error", function (err) {
+  console.error("MongoDB connection error: " + err);
+});
 
 /**
  * Create HTTP server.
@@ -83,4 +97,6 @@ function onListening() {
   var addr = server.address();
   var bind = typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
   debug("Listening on " + bind);
+
+  console.log("Server is running on port " + addr.port);
 }

@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 const crypto = require("crypto");
 
 const passwordUtils = function () {
